@@ -1,0 +1,14 @@
+{
+    "name": "phaser3-cli-tool",
+    "version": "0.0.1",
+    "license": "MIT",
+    "bin": {
+        "phaser3-cli-tool": "bin/phaser3-cli-tool"
+    },
+    "scripts": {},
+    "dependencies": {
+        "minimist": "^1.2.5",
+        "ora": "^5.4.1",
+        "prompt": "^1.1.0"
+    }
+}
