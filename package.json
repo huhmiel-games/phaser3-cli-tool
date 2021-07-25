@@ -1,5 +1,5 @@
 {
-  "name": "phaser3-cli-tool",
+  "name": "@blunt76/phaser3-cli-tool",
   "version": "0.0.2",
   "description": "",
   "main": ".lib/index.js",
