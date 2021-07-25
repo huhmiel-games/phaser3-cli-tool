@@ -1,14 +1,27 @@
 {
-    "name": "phaser3-cli-tool",
-    "version": "0.0.1",
-    "license": "MIT",
-    "bin": {
-        "phaser3-cli-tool": "bin/phaser3-cli-tool"
-    },
-    "scripts": {},
-    "dependencies": {
-        "minimist": "^1.2.5",
-        "ora": "^5.4.1",
-        "prompt": "^1.1.0"
-    }
+  "name": "phaser3-cli-tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".lib/index.js",
+  "bin": {
+    "p3ct": "bin/phaser3-cli-tool"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "p3ct": "node ./bin/p3ct"
+  },
+  "keywords": [],
+  "author": "philippe Pereira",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "configstore": "^6.0.0",
+    "figlet": "^1.5.0",
+    "inquirer": "^8.1.2",
+    "inquirer-file-tree-selection-prompt": "^1.0.12",
+    "minimist": "^1.2.5",
+    "simple-git": "^2.41.1"
+  }
 }
