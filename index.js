@@ -14,37 +14,16 @@ module.exports = () => {
         )
     );
 
-    //console.log('current directory: ', files.getCurrentDirectoryBase())
-
-    const run = async () => {
-        const result = await inquirer.askAtlasUrl();
-
-        console.log(files.fileExists(result.atlas))
-    };
-
-    const askFile = async () => {
-        return await inquirer.askFile();
-        const data = await result
-        console.log(data)
-    }
-
-    const askDirectory = async () => {
-        const result = await inquirer.askDirectory();
-        console.log('RESULT: ', result)
-    }
-
     const selectAtlas = async () => {
         const atlas = require('./lib/atlas.js');
-        console.log(chalk.blue('Select the atlas json file'));
-        return await inquirer.askFile().then((value) => {
+        return await inquirer.askFile('Select the atlas json file').then((value) => {
             return value;
         });
     }
 
     const selectScene = async () => {
         const atlas = require('./lib/atlas.js');
-        console.log(chalk.blue('Select the scene file'));
-        return await inquirer.askFile().then((value) => {
+        return await inquirer.askFile('Select the scene file').then((value) => {
             return value;
         });
     }
@@ -58,27 +37,30 @@ module.exports = () => {
             fs.writeFileSync(sceneUrl, loadingSceneWithAnims);
             console.log(chalk.green('Done'));
         } catch(error) {
-            console.log(chalk.red('Oops something wrong happened...'))
+            console.log(chalk.red('Oops something wrong happened...', error))
         }
     }
 
     const askTask = async () => {
         const result = await inquirer.askTask();
-        // console.log('TASK: ', result)
 
         switch(result.task) {
             case 'create a platformer':
                 const git = require('simple-git')();
+                const dir = await inquirer.askDirectory('Select an empty directory for your project', require('os').homedir());
+                if (files.directoryExists(dir+'/.git')) {
+                    console.log(chalk.red('Already a Git repository!'));
+                    process.exit(1);
+                }
+
                 try {
-                    git.clone('https://github.com/huhmiel-games/phaser3-platformer-template.git .')
+                    console.log(chalk.underline(dir))
+                    // git.clone(`https://github.com/huhmiel-games/phaser3-platformer-template.git ${dir}`)
                 } catch (error) {
                     console.log(chalk.red(error))
                 }
                 
-                // if (files.directoryExists('.git')) {
-                //     console.log(chalk.red('Already a Git repository!'));
-                //     process.exit(1);
-                // }
+                
                 //askTask();
                 break;
             case 'add an atlas':

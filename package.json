@@ -1,10 +1,10 @@
 {
   "name": "@blunt76/phaser3-cli-tool",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "",
   "main": ".lib/index.js",
   "bin": {
-    "p3ct": "bin/phaser3-cli-tool"
+    "p3ct": "bin/p3ct"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,7 +20,7 @@
     "configstore": "^6.0.0",
     "figlet": "^1.5.0",
     "inquirer": "^8.1.2",
-    "inquirer-file-tree-selection-prompt": "^1.0.12",
+    "inquirer-file-tree-selection-prompt": "github:huhmiel-games/inquirer-file-tree-selection",
     "minimist": "^1.2.5",
     "simple-git": "^2.41.1"
   }
